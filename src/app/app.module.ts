@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { SchedulePage } from '../pages/schedule/schedule';
+import { ScheduleDetailPage } from '../pages/schedule/scheduleDetail';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -17,6 +18,7 @@ import { ConferenceProvider } from '../providers/conferenceProvider';
   declarations: [
     MyApp,
     SchedulePage,
+    ScheduleDetailPage,
     ContactPage,
     HomePage,
     TabsPage
@@ -29,6 +31,7 @@ import { ConferenceProvider } from '../providers/conferenceProvider';
   entryComponents: [
     MyApp,
     SchedulePage,
+    ScheduleDetailPage,
     ContactPage,
     HomePage,
     TabsPage

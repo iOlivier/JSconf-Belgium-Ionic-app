@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ConferenceProvider } from '../../providers/conferenceProvider';
+import { ScheduleDetailPage } from './scheduleDetail';
 
 @Component({
   selector: 'page-schedule',
@@ -11,24 +12,19 @@ export class SchedulePage {
   private sessions = [];
 
   constructor(public navCtrl: NavController, private confProvider: ConferenceProvider) {
-  }
-
-  ionViewDidEnter() {
-    this.sessions = this.confProvider.getSessions();
+    this.sessions = confProvider.getSessions();
   }
 
   dividerNeededForSession(index) {
-    if (index == 0) {
+    if (index == 0 || this.sessions[index].timeStart != this.sessions[index-1].timeStart) {
       return true;
-    } else if (this.sessions[index].timeStart == this.sessions[index-1].timeStart) {
-      return false;
     } else {
-      return true;
+      return false;
     }
   }
 
-  goToSessionDetail() {
-
+  goToSessionDetail(session) {
+    this.navCtrl.push(ScheduleDetailPage, { session: session });
   }
 
 }
