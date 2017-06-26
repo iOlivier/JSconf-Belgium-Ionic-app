@@ -6,13 +6,13 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
   <ion-list>
 
     <ion-item-group *ngFor="let session of sessions; let i = index">
 
-      <ion-item-divider sticky ngIf="dividerNeededForSession(i)">
+      <ion-item-divider sticky *ngIf="dividerNeededForSession(i)">
         <ion-label>{{ session.timeStart }}</ion-label>
       </ion-item-divider>
 
