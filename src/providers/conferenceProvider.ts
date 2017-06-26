@@ -27,4 +27,11 @@ export class ConferenceProvider {
     ];
   }
 
+  getSpeakers() {
+      return [
+          { name: 'Olivier', text: 'veel text' },
+          { name: 'Johan', text: 'nog meer text' }
+      ];
+  }
+
 }

@@ -6,7 +6,7 @@ import { MyApp } from './app.component';
 import { SchedulePage } from '../pages/schedule/schedule';
 import { ScheduleDetailPage } from '../pages/schedule/scheduleDetail';
 import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
+import { SpeakersPage } from '../pages/speakers/speakers';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -20,7 +20,7 @@ import { ConferenceProvider } from '../providers/conferenceProvider';
     SchedulePage,
     ScheduleDetailPage,
     ContactPage,
-    HomePage,
+    SpeakersPage,
     TabsPage
   ],
   imports: [
@@ -33,7 +33,7 @@ import { ConferenceProvider } from '../providers/conferenceProvider';
     SchedulePage,
     ScheduleDetailPage,
     ContactPage,
-    HomePage,
+    SpeakersPage,
     TabsPage
   ],
   providers: [

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Speakers</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let speaker of speakers; let i = index">
+    <img [src]="speaker.image"/>
+    <ion-card-content>
+      <ion-card-title>{{ speaker.name }}</ion-card-title>
+      <p>
+        {{ speaker.text }}
+      </p>
+
+      <div text-center>
+        <button clear="" color="danger" icon-start="" ion-button="" small="" class="disable-hover button button-ios button-clear button-clear-ios button-small button-small-ios button-clear-ios-danger">
+          <span class="button-inner">
+            <ion-icon name="logo-twitter" role="img" class="icon" aria-label="star"></ion-icon>
+            Twitter
+          </span>
+        </button>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>
