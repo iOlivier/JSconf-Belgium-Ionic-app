@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Schedule
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item-group *ngFor="let session of sessions; let i = index">
+
+      <ion-item-divider sticky ngIf="dividerNeededForSession(i)">
+        <ion-label>{{ session.timeStart }}</ion-label>
+      </ion-item-divider>
+
+      <ion-item-sliding>
+
+        <button ion-item (click)="goToSessionDetail(session)">
+          <h3>{{ session.name }}</h3>
+          <p>
+            {{ session.timeStart }} &mdash;
+            {{ session.timeEnd }}:
+            {{ session.location }}
+          </p>
+        </button>
+
+      </ion-item-sliding>
+
+    </ion-item-group>
+
+  </ion-list>
+
+</ion-content>
