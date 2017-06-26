@@ -5,7 +5,7 @@ import { MyApp } from './app.component';
 
 import { SchedulePage } from '../pages/schedule/schedule';
 import { ScheduleDetailPage } from '../pages/schedule/scheduleDetail';
-import { ContactPage } from '../pages/contact/contact';
+import { MapPage } from '../pages/map/map';
 import { SpeakersPage } from '../pages/speakers/speakers';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -19,7 +19,7 @@ import { ConferenceProvider } from '../providers/conferenceProvider';
     MyApp,
     SchedulePage,
     ScheduleDetailPage,
-    ContactPage,
+    MapPage,
     SpeakersPage,
     TabsPage
   ],
@@ -32,7 +32,7 @@ import { ConferenceProvider } from '../providers/conferenceProvider';
     MyApp,
     SchedulePage,
     ScheduleDetailPage,
-    ContactPage,
+    MapPage,
     SpeakersPage,
     TabsPage
   ],
