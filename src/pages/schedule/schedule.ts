@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Refresher, ToastController } from 'ionic-angular';
 import { ConferenceData } from '../../providers/conferenceProvider';
 import { ScheduleDetailPage } from './scheduleDetail';
 
@@ -11,7 +11,7 @@ export class SchedulePage {
 
   private sessions = [];
 
-  constructor(public navCtrl: NavController, private confData: ConferenceData) {
+  constructor(public navCtrl: NavController, private confData: ConferenceData, private toastCtrl: ToastController) {
     this.sessions = confData.getSessions();
   }
 
@@ -25,6 +25,23 @@ export class SchedulePage {
 
   goToSessionDetail(session) {
     this.navCtrl.push(ScheduleDetailPage, { session: session });
+  }
+
+  doRefresh(refresher: Refresher) {
+
+    this.sessions = this.confData.getSessions();
+
+    // simulate a network request that would take longer
+    // than just pulling from out local json file
+    setTimeout(() => {
+      refresher.complete();
+
+      const toast = this.toastCtrl.create({
+        message: 'Sessions have been updated.',
+        duration: 3000
+      });
+      toast.present();
+    }, 1000);
   }
 
 }

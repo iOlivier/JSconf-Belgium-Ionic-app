@@ -6,6 +6,10 @@
 
 <ion-content>
 
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
   <ion-card *ngFor="let speaker of speakers; let i = index" (click)="goToDetailPage(speaker)">
     <img [src]="speaker.image"/>
     <ion-card-content>
