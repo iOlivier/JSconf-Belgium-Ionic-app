@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { ConferenceProvider } from '../../providers/conferenceProvider';
+import { ConferenceData } from '../../providers/conferenceProvider';
 import { ScheduleDetailPage } from './scheduleDetail';
 
 @Component({
@@ -11,8 +11,8 @@ export class SchedulePage {
 
   private sessions = [];
 
-  constructor(public navCtrl: NavController, private confProvider: ConferenceProvider) {
-    this.sessions = confProvider.getSessions();
+  constructor(public navCtrl: NavController, private confData: ConferenceData) {
+    this.sessions = confData.getSessions();
   }
 
   dividerNeededForSession(index) {

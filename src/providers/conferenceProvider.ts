@@ -1,5 +1,5 @@
 
-export class ConferenceProvider {
+export class ConferenceData {
 
   getSessions() {
     return [

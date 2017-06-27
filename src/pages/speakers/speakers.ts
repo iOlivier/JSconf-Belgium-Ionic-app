@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { ConferenceProvider } from '../../providers/conferenceProvider';
+import { ConferenceData } from '../../providers/conferenceProvider';
 import { SpeakerDetailPage } from './speakerDetail';
 
 
@@ -12,8 +12,8 @@ export class SpeakersPage {
 
   private speakers = [];
 
-  constructor(public navCtrl: NavController, private confProvider: ConferenceProvider) {
-    this.speakers = confProvider.getSpeakers();
+  constructor(public navCtrl: NavController, private confData: ConferenceData) {
+    this.speakers = confData.getSpeakers();
   }
 
   goToDetailPage(speaker) {

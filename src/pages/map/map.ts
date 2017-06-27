@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { ConferenceProvider } from '../../providers/conferenceProvider';
+import { ConferenceData } from '../../providers/conferenceProvider';
 
 declare var google: any;
 
@@ -12,13 +12,13 @@ export class MapPage {
 
   @ViewChild('mapCanvas') mapElement: ElementRef;
 
-  constructor(public navCtrl: NavController, private confProvider: ConferenceProvider) {
+  constructor(public navCtrl: NavController, private confData: ConferenceData) {
 
   }
 
   ionViewDidLoad() {
 
-    let mapData = this.confProvider.getMapData();
+    let mapData = this.confData.getMapData();
 
     let mapEle = this.mapElement.nativeElement;
 

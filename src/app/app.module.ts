@@ -13,7 +13,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { ConferenceProvider } from '../providers/conferenceProvider';
+import { ConferenceData } from '../providers/conferenceProvider';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,7 @@ import { ConferenceProvider } from '../providers/conferenceProvider';
     TabsPage
   ],
   providers: [
-    ConferenceProvider,
+    ConferenceData,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
