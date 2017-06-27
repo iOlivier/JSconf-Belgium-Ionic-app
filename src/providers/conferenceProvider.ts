@@ -34,4 +34,17 @@ export class ConferenceProvider {
       ];
   }
 
+  getMapData() {
+      return [{
+            "name": "Howest Bruges",
+            "lat": 51.192185,
+            "lng": 3.214246,
+            "center": true
+        }, {
+            "name": "Parking",
+            "lat": 51.191842,
+            "lng": 3.213452
+        }];
+  }
+
 }
