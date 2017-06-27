@@ -1,19 +1,18 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Speakers</ion-title>
+    <ion-title>{{ speaker.name }}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
 
-  <ion-card *ngFor="let speaker of speakers; let i = index" (click)="goToDetailPage(speaker)">
+  <ion-card>
     <img [src]="speaker.image"/>
     <ion-card-content>
-      <ion-card-title>{{ speaker.name }}</ion-card-title>
+      <ion-card-title>{{ speaker.function }}</ion-card-title>
       <p>
         {{ speaker.text }}
       </p>
-
       <div text-center>
         <button clear="" color="danger" icon-start="" ion-button="" small="" class="disable-hover button button-ios button-clear button-clear-ios button-small button-small-ios button-clear-ios-danger">
           <span class="button-inner">
@@ -22,7 +21,12 @@
           </span>
         </button>
       </div>
+    </ion-card-content>
+  </ion-card>
 
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>Sessions</ion-card-title>
     </ion-card-content>
   </ion-card>
   

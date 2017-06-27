@@ -7,6 +7,7 @@ import { SchedulePage } from '../pages/schedule/schedule';
 import { ScheduleDetailPage } from '../pages/schedule/scheduleDetail';
 import { MapPage } from '../pages/map/map';
 import { SpeakersPage } from '../pages/speakers/speakers';
+import { SpeakerDetailPage } from '../pages/speakers/speakerDetail';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -21,6 +22,7 @@ import { ConferenceProvider } from '../providers/conferenceProvider';
     ScheduleDetailPage,
     MapPage,
     SpeakersPage,
+    SpeakerDetailPage,
     TabsPage
   ],
   imports: [
@@ -34,6 +36,7 @@ import { ConferenceProvider } from '../providers/conferenceProvider';
     ScheduleDetailPage,
     MapPage,
     SpeakersPage,
+    SpeakerDetailPage,
     TabsPage
   ],
   providers: [
