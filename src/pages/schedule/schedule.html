@@ -17,7 +17,7 @@
     <ion-item-group *ngFor="let session of sessions; let i = index">
 
       <ion-item-divider sticky *ngIf="dividerNeededForSession(i)">
-        <ion-label>{{ session.timeStart }}</ion-label>
+        <ion-label>{{ session.from }}</ion-label>
       </ion-item-divider>
 
       <ion-item-sliding>
@@ -25,9 +25,9 @@
         <button ion-item (click)="goToSessionDetail(session)">
           <h3>{{ session.name }}</h3>
           <p>
-            {{ session.timeStart }} &mdash;
-            {{ session.timeEnd }}:
-            {{ session.location }}
+            {{ session.from }} &mdash;
+            {{ session.till }}:
+            {{ session.room }}
           </p>
         </button>
 

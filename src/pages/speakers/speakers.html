@@ -10,12 +10,12 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <ion-card *ngFor="let speaker of speakers; let i = index" (click)="goToDetailPage(speaker)">
-    <img [src]="speaker.image"/>
+  <ion-card *ngFor="let speaker of speakers" (click)="goToDetailPage(speaker)">
+    <img [src]="speaker.url"/>
     <ion-card-content>
       <ion-card-title>{{ speaker.name }}</ion-card-title>
       <p>
-        {{ speaker.text }}
+        {{ speaker.bio }}
       </p>
 
       <div text-center>

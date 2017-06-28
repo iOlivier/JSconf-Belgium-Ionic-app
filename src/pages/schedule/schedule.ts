@@ -12,15 +12,11 @@ export class SchedulePage {
   private sessions = [];
 
   constructor(public navCtrl: NavController, private confData: ConferenceData, private toastCtrl: ToastController) {
-    this.sessions = confData.getSessions();
+    this.confData.getSessions(new Date().getFullYear()).then(sessions => this.sessions = sessions);
   }
 
-  dividerNeededForSession(index) {
-    if (index == 0 || this.sessions[index].timeStart != this.sessions[index-1].timeStart) {
-      return true;
-    } else {
-      return false;
-    }
+  dividerNeededForSession(index): Boolean {
+    return (index == 0 || this.sessions[index].from != this.sessions[index-1].from);
   }
 
   goToSessionDetail(session) {
@@ -29,11 +25,10 @@ export class SchedulePage {
 
   doRefresh(refresher: Refresher) {
 
-    this.sessions = this.confData.getSessions();
+    this.confData.getSessions(new Date().getFullYear()).then(sessions => {
 
-    // simulate a network request that would take longer
-    // than just pulling from out local json file
-    setTimeout(() => {
+      this.sessions = sessions;
+
       refresher.complete();
 
       const toast = this.toastCtrl.create({
@@ -41,7 +36,7 @@ export class SchedulePage {
         duration: 3000
       });
       toast.present();
-    }, 1000);
+    });
   }
 
 }

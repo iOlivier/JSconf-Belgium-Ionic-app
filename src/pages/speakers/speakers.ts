@@ -13,7 +13,7 @@ export class SpeakersPage {
   private speakers = [];
 
   constructor(public navCtrl: NavController, private confData: ConferenceData, private toastCtrl: ToastController) {
-    this.speakers = confData.getSpeakers();
+    this.confData.getSpeakers(new Date().getFullYear()).then(sessions => this.speakers = sessions);
   }
 
   goToDetailPage(speaker) {
@@ -22,7 +22,7 @@ export class SpeakersPage {
 
   doRefresh(refresher: Refresher) {
 
-    this.speakers = this.confData.getSpeakers()
+    this.confData.getSpeakers(new Date().getFullYear()).then(sessions => this.speakers = sessions);
 
     // simulate a network request that would take longer
     // than just pulling from out local json file

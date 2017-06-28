@@ -7,11 +7,12 @@
 </ion-header>
 
 <ion-content padding>
-
-  <p>
-    {{ session.timeStart }} &mdash;
-    {{ session.timeEnd }}:
-    {{ session.location }}
-  </p>
-
+  <h4>Time</h4>
+  <p>{{ session.from }} &mdash; {{ session.till }}<p>
+  <h4>Location</h4>
+  <p>{{ session.room }}</p>
+  <h4>Speaker</h4>
+  <p>{{ session.speaker }}</p>
+  <h4>Summary</h4>
+  <p>{{ session.info }}</p>
 </ion-content>
