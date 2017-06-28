@@ -8,7 +8,7 @@
 
 <ion-content padding>
   <h4>Time</h4>
-  <p>{{ session.from }} &mdash; {{ session.till }}<p>
+  <p>{{ session.from | time }} - {{ session.till | time }}<p>
   <h4>Location</h4>
   <p>{{ session.room }}</p>
   <h4>Speaker</h4>

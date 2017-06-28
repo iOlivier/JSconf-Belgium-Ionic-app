@@ -4,6 +4,8 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 
+import { TimePipe } from './time.pipe';
+
 import { SchedulePage } from '../pages/schedule/schedule';
 import { ScheduleDetailPage } from '../pages/schedule/scheduleDetail';
 import { MapPage } from '../pages/map/map';
@@ -24,7 +26,8 @@ import { ConferenceData } from '../providers/conferenceProvider';
     MapPage,
     SpeakersPage,
     SpeakerDetailPage,
-    TabsPage
+    TabsPage,
+    TimePipe
   ],
   imports: [
     BrowserModule,
