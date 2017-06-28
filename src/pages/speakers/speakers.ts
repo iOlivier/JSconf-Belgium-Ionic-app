@@ -14,6 +14,7 @@ export class SpeakersPage {
 
   constructor(public navCtrl: NavController, private confData: ConferenceData, private toastCtrl: ToastController) {
     this.confData.getSpeakers(new Date().getFullYear()).then(sessions => this.speakers = sessions);
+    setTimeout(() => console.log(this.speakers), 100);
   }
 
   goToDetailPage(speaker) {
